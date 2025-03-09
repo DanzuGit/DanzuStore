@@ -1,0 +1,142 @@
+/* Reset tampilan default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Warna background dan tata letak */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container form */
+.container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Judul */
+h2 {
+    margin-bottom: 10px;
+    color: #00bcd4;
+}
+
+/* Deskripsi */
+p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #bbbbbb;
+}
+
+/* Input dan textarea */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #292929;
+    color: white;
+    font-size: 16px;
+}
+
+/* Tombol Kirim */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #00bcd4;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0097a7;
+}
+
+/* Label */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #bbbbbb;
+}
+
+.hidden {
+    display: none;
+}
+
+#response-message {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #1e88e5;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('loading-bg.gif') no-repeat center center fixed; /* Sesuaikan nama file GIF */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-screen p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#content {
+    padding: 20px;
+    text-align: center;
+}

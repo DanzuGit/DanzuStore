@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.gif'); /* Menggunakan file GIF lokal */
+    background-size: cover; /* Menutupi seluruh area body */
+    background-position: center; /* Posisi GIF di tengah */
+    background-repeat: no-repeat; /* Tidak mengulang GIF */
+    background-attachment: fixed; /* GIF tetap di tempat saat scrolling */
+    min-height: 100vh; /* Memastikan body mencakup seluruh tinggi viewport */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.image-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Efek blur untuk latar belakang */
+}
+
+.image-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-container p {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.image-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.image-container:hover p {
+    color: #47cf; /* Warna cyan saat hover */
+}

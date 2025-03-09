@@ -1,0 +1,238 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #00bcd4;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.slide .deskripsi {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide.active .deskripsi {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kontak-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.kontak {
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    width: 150px;
+}
+
+.kontak:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.kontak img {
+    width: 50px;
+    height: 50px;
+}
+
+.kotak-abu {
+    width: 80%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ccc;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+  background-color: #00bcd4;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* Efek animasi utama */
+.layanan-item {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease, background 0.3s ease; /* Animasi smooth */
+}
+
+/* Saat ditekan, membesar perlahan */
+.layanan-item:active {
+  transform: scale(1.1); /* Membesarkan 1.1x */
+}
+
+/* Overlay untuk efek tekan */
+.layanan-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 1s ease;
+}
+
+/* Warna berganti dengan smooth saat ditekan */
+.layanan-item:active {
+  background: linear-gradient(45deg, cyan, #47cf, cyan, #47cf);
+  background-size: 300% 300%;
+  animation: gradientMove 4s linear infinite;
+}
+
+/* Animasi perubahan warna */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Efek overlay muncul saat ditekan */
+.layanan-item:active::after {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Loading Screen */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('Galaxy.gif') no-repeat center center fixed; /* Sesuaikan nama file GIF */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000; /* Pastikan loading screen di atas halaman utama */
+  transition: opacity 1s ease-in-out; /* Transisi fade-out */
+}
+
+/* Animasi Spinner (Ukuran Diperkecil) */
+.loader {
+  border: 8px solid #f3f3f3; /* Diperkecil dari 16px ke 8px */
+  border-top: 8px solid green; /* Diperkecil dari 16px ke 8px */
+  border-radius: 50%;
+  width: 60px; /* Diperkecil dari 120px ke 60px */
+  height: 60px; /* Diperkecil dari 120px ke 60px */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Teks Loading */
+#loading-screen p {
+  margin-top: 20px;
+  font-size: 15px; /* Ukuran font diperkecil */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Konten Utama (Awalnya Tersembunyi) */
+#main-content {
+  opacity: 0; /* Awalnya transparan */
+  transition: opacity 1s ease-in-out; /* Transisi fade-in */
+}
+
+/* Transisi Halaman Utama */
+#main-content.fade-in {
+  opacity: 1; /* Muncul setelah loading selesai */
+}
+
+/* Gaya Default untuk Header, Main, dan Footer */
+header, main, footer {
+  transition: opacity 1s ease-in-out; /* Transisi untuk konten utama */
+}

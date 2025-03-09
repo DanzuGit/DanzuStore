@@ -1,0 +1,73 @@
+/* Tema Gelap dengan Nuansa Galaxy */
+body {
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    margin: 20px;
+    background-color: #0d1b2a; /* Warna dasar gelap */
+    color: #ffffff;
+}
+
+/* Efek Glow Neon */
+h1, h2 {
+    color: #79aefc;
+    text-shadow: 0 0 10px rgba(121, 174, 252, 0.8);
+}
+
+/* Container Editor */
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Label */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #79aefc;
+}
+
+/* Kotak Input */
+textarea {
+    width: 90%;
+    height: 100px;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #79aefc;
+    border-radius: 8px;
+    font-family: monospace;
+    resize: vertical;
+    background: #1b263b; /* Biru gelap */
+    color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(121, 174, 252, 0.5);
+}
+
+/* Tombol Run */
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: linear-gradient(45deg, #79aefc, #1b98e0);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(121, 174, 252, 0.8);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #1b98e0, #79aefc);
+}
+
+/* Area Output */
+iframe {
+    width: 100%; /* Besar */
+    height: 600px; /* Tinggi */
+    border: 2px solid #79aefc;
+    background: #1b263b; /* Warna biru gelap */
+    box-shadow: 0 0 10px rgba(121, 174, 252, 0.5);
+}
